@@ -1,5 +1,7 @@
 # Abbreviations {.unnumbered}
 
+r - Growth rate as doubling time
+
 CFU -- Colony Forming Units
 
 *D* -- Final Population density - The estimated number of cells per ml at the end of the culture cycle
