@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: 'How ecological interactions shape microbial mutation rates'
-  author: 'Rowan Green'
-  subtitle: 'A thesis submitted to the University of Manchester for the degree of Doctor of Philosophy in the Faculty of Science and Engineering. '
+  title: 'How ecological interactions shape microbial mutation rates to antimicrobial resistance'
+  author: 'Rowan C. Green'
+  subtitle: 'A thesis submitted to the University of Manchester for the degree of Doctor of Philosophy in the Faculty of Science and Engineering. School of Natural Sciences, Department of Earth and Environment'
   date: today
   date-format: "YYYY"
 
