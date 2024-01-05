@@ -197,7 +197,7 @@ Environment}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, interior hidden, breakable, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, boxrule=0pt, breakable, interior hidden, sharp corners, frame hidden, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -490,21 +490,16 @@ To generate hypotheses for the mechanisms of density-associated mutation
 rate plasticity we constructed a system of ordinary differential
 equations (ODEs) that recapitulates the dynamics of metabolism, growth
 and mutagenesis in a 1mL batch culture of \emph{E. coli}
-(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F1}{\textbf{Fig.
-1}}). The enzyme MutT, responsible for degrading mutagenic oxidised GTP
-(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#ref-19}{\textbf{19}}),
-is essential in DAMP
-(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#ref-3}{\textbf{3}});
-the ODE model is therefore focussed on guanine bases. In the model
-external glucose (\textbf{\emph{eGlc}}) is taken up by a small initial
-\emph{E. coli} population (\textbf{\emph{wtCell}}). Internal glucose
-(\textbf{\emph{iGlc}}) is then metabolised to produce
+Figure~\ref{fig-1}. The enzyme MutT, responsible for degrading mutagenic
+oxidised GTP (Maki and Sekiguchi 1992), is essential in DAMP (Krašovec
+et al. 2017); the ODE model is therefore focussed on guanine bases. In
+the model external glucose (\textbf{\emph{eGlc}}) is taken up by a small
+initial \emph{E. coli} population (\textbf{\emph{wtCell}}). Internal
+glucose (\textbf{\emph{iGlc}}) is then metabolised to produce
 \textbf{\emph{ROS}, \emph{dGTP}} and, largely, `other' molecules (`Sink'
-in
-\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F1}{\textbf{Fig.
-1}}). \textbf{\emph{dGTP}} is then either integrated into a newly
-synthesised DNA molecule (\textbf{\emph{DNA}}) or it reacts with
-\textbf{\emph{ROS}} to produce 8-oxo-2'-deoxyguanosine triphosphate
+in Figure~\ref{fig-1}). \textbf{\emph{dGTP}} is then either integrated
+into a newly synthesised DNA molecule (\textbf{\emph{DNA}}) or it reacts
+with \textbf{\emph{ROS}} to produce 8-oxo-2'-deoxyguanosine triphosphate
 (\textbf{\emph{odGTP}}). In this model, non-oxidised
 \textbf{\emph{dGTP}} always pairs correctly with cytosine, producing
 non-mutant DNA (\textbf{\emph{DNA}}). In a second round of DNA
@@ -521,9 +516,8 @@ interest is the mutation rate, which is defined as the number of mutant
 base pairs (\textbf{\emph{mCell}}) divided by the number of non-mutant
 base pairs (\textbf{\emph{wtCell}}). The model comprises 10 ordinary
 differential equations (ODEs), one for each substance variable in
-\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F1}{\textbf{Fig.1}}
-(excluding `Sink'), plus \textbf{\emph{cytVol}}, the total population
-cytoplasmic volume within which all the reactions occur
+Figure~\ref{fig-1} (excluding `Sink'), plus \textbf{\emph{cytVol}}, the
+total population cytoplasmic volume within which all the reactions occur
 (\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#T1}{\textbf{Table
 1}},
 \href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#disp-formula-1}{\textbf{Eq.
@@ -554,6 +548,31 @@ L\textsuperscript{-1}
 1}}). The dynamics of external glucose, population size and mutation
 rate for these simulations are shown in
 \href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F1}{\textbf{Fig.1B-D}}.
+
+\begin{figure}
+
+{\centering \includegraphics{Fig1jpg.jpg}
+
+}
+
+\caption{\label{fig-1}\textbf{Dynamical computational model of growth,
+metabolism and mutagenesis in E. coli.} A: Model structure connecting
+variables. Red variables indicate the pathway to mutagenesis; green
+numbered arrows indicate pathways targeted by model variants. This
+structure was represented in ODEs, parameterised from the literature
+(Methods), and simulated to give output shown in B-D. B: Kinetics of
+external glucose concentration (eGlc), C: population size (wtCell
+divided by G nucleotides in the E. coli genome) and D: mutation rate
+(mCell/wtCell). Note log scale on y-axis in panel D. Panels B-D are
+plotted for 5 initial glucose concentrations (range 55 -- 1100 mg L-1 as
+shown in legend), initial glucose concentration indicated by line
+colour.}
+
+\end{figure}
+
+\begin{table}
+
+\end{table}
 
 \bookmarksetup{startatroot}
 
@@ -684,6 +703,12 @@ e2001477. \url{https://doi.org/10.1371/journal.pbio.2001477}.
 Maharjan, Ram P, and Thomas Ferenci. 2018. {``The Impact of Growth Rate
 and Environmental Factors on Mutation Rates and Spectra in Escherichia
 Coli.''} \emph{Environmental Microbiology Reports} 10 (6): 626--33.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Maki1992}{}}%
+Maki, Hisaji, and Mutsuo Sekiguchi. 1992. {``MutT Protein Specifically
+Hydrolyses a Potent Mutagenic Substrate for DNA Synthesis.''}
+\emph{Nature} 355 (6357): 273--75.
+\url{https://doi.org/10.1038/355273a0}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Ragheb2019}{}}%
 Ragheb, Mark N., Maureen K. Thomason, Chris Hsu, Patrick Nugent, John
