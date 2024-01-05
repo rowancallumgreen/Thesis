@@ -8,6 +8,8 @@ Microbial mutation rates have an inverse association with population density acr
 
 In order to test potential mechanisms generating DAMP, we developed and systematically assessed a computational model connecting metabolism and mutagenesis in a growing *E. coli* population. This model generates the hypothesis that the key determinants of DAMP are the production and degradation rates of reactive oxygen species (ROS). Though molecular oxygen is relatively stable it can be reduced to superoxide (^•^O~2−~), hydrogen peroxide (H~2~O~2~) and hydroxyl radicals (HO^•^). These "reactive oxygen species" are strong oxidants able to damage multiple biological molecules including nucleotides and DNA [@Imlay2003]. We tested the role of ROS in controlling DAMP by estimating mutation rate plasticity under different conditions of environmental oxygen and with genetic manipulations known to alter ROS dynamics. We find that the reduction in mutation rate at increased population density results from the population's increased ability to degrade H~2~O~2~, resulting in reduced ROS-associated mutagenesis. We show that this density effect is also experienced by cells deficient in H~2~O~2~ degradation when cocultured with wild-type cells able to detoxify the environment. Mutation rates therefore depend not only on the genotype of the individual but also on the community's capacity to degrade H~2~O~2~.
 
+
+
 ```{r, echo = F, include = F, warning = F, error=FALSE}
 #this R code recreates the ODE models and associated figures from Green et al, 2023
 #Files SupData1_FluctuationAssays.csv, SupData3_Jain09.txt and SupData4_Krasovec2017.txt are required to run this script
@@ -1452,11 +1454,15 @@ ggsave("FigS2.tiff",
        iGlcPlot,width=8,height=5,units="in")
 ```
 
+
+
 ## Results
 
 ### Initial computational model of nucleotide metabolism in a growing microbial population fails to reproduce mutation rate plasticity
 
 To generate hypotheses for the mechanisms of density-associated mutation rate plasticity we constructed a system of ordinary differential equations (ODEs) that recapitulates the dynamics of metabolism, growth and mutagenesis in a 1mL batch culture of *E. coli* @fig-one. The enzyme MutT, responsible for degrading mutagenic oxidised GTP [@Maki1992], is essential in DAMP [@Krasovec2017]; the ODE model is therefore focussed on guanine bases. In the model external glucose (***eGlc***) is taken up by a small initial *E. coli* population (***wtCell***). Internal glucose (***iGlc***) is then metabolised to produce ***ROS*****, *dGTP*** and, largely, 'other' molecules ('Sink' in @fig-one). ***dGTP*** is then either integrated into a newly synthesised DNA molecule (***DNA***) or it reacts with ***ROS*** to produce 8-oxo-2'-deoxyguanosine triphosphate (***odGTP***). In this model, non-oxidised ***dGTP*** always pairs correctly with cytosine, producing non-mutant DNA (***DNA***). In a second round of DNA replication the guanine base is now on the template strand, cytosine is correctly inserted opposite producing new chromosomes (***wtCell***). ***odGTP***, if it is not dephosphorylated by MutT into *dGMP* (Sink), can either pair correctly with cytosine (becoming ***DNA***) or mis-pair with adenine (becoming ***mDNA***). When ***odGTP*** is inserted opposite adenine into DNA (***mDNA***) it may be repaired by the MutS or MutY proteins, converting the ***mDNA*** back to ***DNA***. The key output of interest is the mutation rate, which is defined as the number of mutant base pairs (***mCell***) divided by the number of non-mutant base pairs (***wtCell***). The model comprises 10 ordinary differential equations (ODEs), one for each substance variable in @fig-one (excluding 'Sink'), plus ***cytVol***, the total population cytoplasmic volume within which all the reactions occur ( ,Eq. 1-[**10**](https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full#disp-formula-10), Methods). These equations require 14 parameters (some of them composite, [**Table 2**](https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full#T2)); the structure and parameter values are largely taken from the existing literature (for details see Methods). Un-measurable parameters (notably the rate of ***dGTP*** oxidation to ***odGTP*** by ***ROS***, '**O2'**) were set to give the observed mutation rate (2 × 10^-10^ mutations per base pair per generation, ([**20**](https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full#ref-20))) at a final population density of 3 × 10^8^ CFU ml^-1^, typical of 250 mg L^-1^ glucose in minimal media. As with most experiments demonstrating density-associated mutation rate plasticity ([**3**](https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full#ref-3), [**21**](https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full#ref-21)), final population density is controlled by varying initial external glucose. We initiated 28h simulations of 1ml cultures with 2175 cells (a small number, typical of fluctuation assays estimating mutation rate, [**Fig. S10**](https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full#F14)), no internal metabolites and external glucose concentrations relevant to wet-lab experiments -- across a log scale from 55 to 1100 mg L^-1^ ([**Table 1**](https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full#T1)). The dynamics of external glucose, population size and mutation rate for these simulations are shown in [**Fig.1B-D**](https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full#F1).
+
+
 
 ```{r}
 #| label: fig-plot
@@ -1478,3 +1484,4 @@ read_csv("Table1.csv")->tab1
 knitr::kable(tab1)
 
 ```
+
