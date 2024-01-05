@@ -1,0 +1,21 @@
+# Abbreviations {.unnumbered}
+
+CFU -- Colony Forming Units
+
+*D* -- Final Population density - The estimated number of cells per ml at the end of the culture cycle
+
+DAMP -- Density-associated mutation-rate plasticity
+
+*m* -- Number of mutational events
+
+MMR -- Methyl-directed DNA mismatch repair
+
+MRP -- Mutation Rate Plasticity
+
+*N~0~* -- The initial population size of cells.
+
+*N~t~* -- The population size at the end of the culture period
+
+*N~e~* -- The effective population size
+
+SIM -- Stress-Induced Mutagenesis

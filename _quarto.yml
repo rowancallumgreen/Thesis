@@ -13,6 +13,8 @@ book:
   #altadvisor: 'Your Other Advisor'
   chapters:
     - index.qmd
+    - Abbreviations.qmd
+    - Abstract.qmd
     - Introduction.qmd
     - Results.qmd
     - Discussion.qmd
