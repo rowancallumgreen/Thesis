@@ -15,6 +15,7 @@ book:
     - index.qmd
     - Abbreviations.qmd
     - Abstract.qmd
+    - Declaration.qmd
     - Introduction.qmd
     - Results.qmd
     - Discussion.qmd
