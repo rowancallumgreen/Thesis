@@ -16,6 +16,8 @@ book:
     - Abstract.qmd
     - Declaration.qmd
     - Copyright.qmd
+    - Acknowledgements.qmd
+    - LayAbstract.qmd
     - Introduction.qmd
     - Results.qmd
     - Discussion.qmd
