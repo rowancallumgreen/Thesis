@@ -2,10 +2,10 @@
 eGlc,External glucose,3.1x10-4 to 6.2x10-3,M,1 mL culture
 iGlc,Internal glucose,0,M,Cytoplasm
 dGTP,Deoxyguanosine triphosphate,0,M,Cytoplasm
-DNA,Guanine nucleotides in the newly synthesised strand,0,M,Cytoplasm
-wtCell,Guanine nucleotides in the template strand,8.5x10-12,M,1 mL culture
+DNA,Guanine nucleotides in the\nnewly synthesised strand,0,M,Cytoplasm
+wtCell,Guanine nucleotides in the\ntemplate strand,8.5x10-12,M,1 mL culture
 ROS,Reactive oxygen species (H2O2),0,M,Cytoplasm
-odGTP,8-oxo-2'-deoxyguanosine triphosphate,0,M,Cytoplasm
-mDNA,odGTP nucleotides in the newly synthesised DNA strand,0,M,Cytoplasm
-mCell,odGTP nucleotides in the template DNA strand,0,M,1 mL culture
+odGTP,8-oxo-2'-deoxyguanosine\ntriphosphate,0,M,Cytoplasm
+mDNA,odGTP nucleotides in the\nnewly synthesised DNA strand,0,M,Cytoplasm
+mCell,odGTP nucleotides in the\ntemplate DNA strand,0,M,1 mL culture
 cytVol,Total cytoplasmic volume,2.25x10-9,mL,NA
