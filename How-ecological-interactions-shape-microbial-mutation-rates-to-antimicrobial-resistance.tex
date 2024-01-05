@@ -197,7 +197,7 @@ Environment}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, sharp corners, frame hidden, interior hidden, enhanced, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, interior hidden, breakable, sharp corners]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -411,10 +411,149 @@ H\textsubscript{2}O\textsubscript{2}.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{results}{%
-\chapter{Results}\label{results}}
+\hypertarget{working-together-to-control-mutation-how-collective-peroxide-detoxification-determines-microbial-mutation-rate-plasticity}{%
+\chapter{Working together to control mutation: how collective peroxide
+detoxification determines microbial mutation rate
+plasticity}\label{working-together-to-control-mutation-how-collective-peroxide-detoxification-determines-microbial-mutation-rate-plasticity}}
 
-The results show mutations.
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+Uncovering the mechanisms behind environmentally responsive mutagenesis
+informs our understanding of evolution, notably antimicrobial
+resistance, where mutation supply can be critical (Gifford et al. 2023;
+Ragheb et al. 2019). Microbial mutation rates are responsive to a wide
+variety of environmental factors including population density (Krašovec
+et al. 2017), temperature (Chu et al. 2018), growth rate (Ram P.
+Maharjan and Ferenci 2018; Liu and Zhang 2019), stress (MacLean,
+Torres-Barceló, and Moxon 2013; Foster 2007), growth phase (Loewe,
+Textor, and Scherer 2003) and nutritional state (Ram P. Maharjan and
+Ferenci 2017). Such mutation rate plasticity inspires the idea of
+``anti-evolution drugs'', able to slow the evolution of antimicrobial
+resistance during the treatment of an infection (Ragheb et al. 2019;
+Cirz et al. 2005; Domenech et al. 2020; Alam et al. 2016). Even small
+reductions in the mutation rate (2-5-fold) can have dramatic effects on
+the capacity of bacterial populations to adapt to antibiotic treatment,
+particularly when evolution is limited by mutation supply, as is the
+case for small pathogen populations (Ragheb et al. 2019).
+
+Microbial mutation rates have an inverse association with population
+density across all domains of life, we have previously shown that 93\%
+of otherwise unexplained variation in published mutation rate estimates
+is explained by the final population density (Krašovec et al. 2017).
+This density-associated mutation rate plasticity (DAMP) is a distinct
+phenotype from stress-induced mutagenesis, which acts via independent
+genetic mechanisms (Krašovec et al. 2018). Population density alters not
+only the rate but also the spectrum of mutations, with significantly
+higher rates of AT\textgreater GC transitions seen in low density
+populations (Gifford et al. 2023). Density effects are likely relevant
+to natural populations given that population sizes and densities vary
+greatly, for example, \emph{Escherichia coli} populations in host faeces
+can range in density by 5 orders of magnitude (Tenaillon et al. 2010),
+and infections can be established by populations as small as
+6×10\textsuperscript{3} cells (Cornick and Helgerson 2004). We therefore
+aim to mechanistically describe the widespread phenotype of DAMP.
+
+In order to test potential mechanisms generating DAMP, we developed and
+systematically assessed a computational model connecting metabolism and
+mutagenesis in a growing \emph{E. coli} population. This model generates
+the hypothesis that the key determinants of DAMP are the production and
+degradation rates of reactive oxygen species (ROS). Though molecular
+oxygen is relatively stable it can be reduced to superoxide
+(\textsuperscript{•}O\textsubscript{2−}), hydrogen peroxide
+(H\textsubscript{2}O\textsubscript{2}) and hydroxyl radicals
+(HO\textsuperscript{•}). These ``reactive oxygen species'' are strong
+oxidants able to damage multiple biological molecules including
+nucleotides and DNA (Imlay 2003). We tested the role of ROS in
+controlling DAMP by estimating mutation rate plasticity under different
+conditions of environmental oxygen and with genetic manipulations known
+to alter ROS dynamics. We find that the reduction in mutation rate at
+increased population density results from the population's increased
+ability to degrade H\textsubscript{2}O\textsubscript{2}, resulting in
+reduced ROS-associated mutagenesis. We show that this density effect is
+also experienced by cells deficient in
+H\textsubscript{2}O\textsubscript{2} degradation when cocultured with
+wild-type cells able to detoxify the environment. Mutation rates
+therefore depend not only on the genotype of the individual but also on
+the community's capacity to degrade
+H\textsubscript{2}O\textsubscript{2}.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{initial-computational-model-of-nucleotide-metabolism-in-a-growing-microbial-population-fails-to-reproduce-mutation-rate-plasticity}{%
+\subsection{Initial computational model of nucleotide metabolism in a
+growing microbial population fails to reproduce mutation rate
+plasticity}\label{initial-computational-model-of-nucleotide-metabolism-in-a-growing-microbial-population-fails-to-reproduce-mutation-rate-plasticity}}
+
+To generate hypotheses for the mechanisms of density-associated mutation
+rate plasticity we constructed a system of ordinary differential
+equations (ODEs) that recapitulates the dynamics of metabolism, growth
+and mutagenesis in a 1mL batch culture of \emph{E. coli}
+(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F1}{\textbf{Fig.
+1}}). The enzyme MutT, responsible for degrading mutagenic oxidised GTP
+(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#ref-19}{\textbf{19}}),
+is essential in DAMP
+(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#ref-3}{\textbf{3}});
+the ODE model is therefore focussed on guanine bases. In the model
+external glucose (\textbf{\emph{eGlc}}) is taken up by a small initial
+\emph{E. coli} population (\textbf{\emph{wtCell}}). Internal glucose
+(\textbf{\emph{iGlc}}) is then metabolised to produce
+\textbf{\emph{ROS}, \emph{dGTP}} and, largely, `other' molecules (`Sink'
+in
+\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F1}{\textbf{Fig.
+1}}). \textbf{\emph{dGTP}} is then either integrated into a newly
+synthesised DNA molecule (\textbf{\emph{DNA}}) or it reacts with
+\textbf{\emph{ROS}} to produce 8-oxo-2'-deoxyguanosine triphosphate
+(\textbf{\emph{odGTP}}). In this model, non-oxidised
+\textbf{\emph{dGTP}} always pairs correctly with cytosine, producing
+non-mutant DNA (\textbf{\emph{DNA}}). In a second round of DNA
+replication the guanine base is now on the template strand, cytosine is
+correctly inserted opposite producing new chromosomes
+(\textbf{\emph{wtCell}}). \textbf{\emph{odGTP}}, if it is not
+dephosphorylated by MutT into \emph{dGMP} (Sink), can either pair
+correctly with cytosine (becoming \textbf{\emph{DNA}}) or mis-pair with
+adenine (becoming \textbf{\emph{mDNA}}). When \textbf{\emph{odGTP}} is
+inserted opposite adenine into DNA (\textbf{\emph{mDNA}}) it may be
+repaired by the MutS or MutY proteins, converting the
+\textbf{\emph{mDNA}} back to \textbf{\emph{DNA}}. The key output of
+interest is the mutation rate, which is defined as the number of mutant
+base pairs (\textbf{\emph{mCell}}) divided by the number of non-mutant
+base pairs (\textbf{\emph{wtCell}}). The model comprises 10 ordinary
+differential equations (ODEs), one for each substance variable in
+\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F1}{\textbf{Fig.1}}
+(excluding `Sink'), plus \textbf{\emph{cytVol}}, the total population
+cytoplasmic volume within which all the reactions occur
+(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#T1}{\textbf{Table
+1}},
+\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#disp-formula-1}{\textbf{Eq.
+1}}-\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#disp-formula-10}{\textbf{10}},
+Methods). These equations require 14 parameters (some of them composite,
+\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#T2}{\textbf{Table
+2}}); the structure and parameter values are largely taken from the
+existing literature (for details see Methods). Un-measurable parameters
+(notably the rate of \textbf{\emph{dGTP}} oxidation to
+\textbf{\emph{odGTP}} by \textbf{\emph{ROS}}, '\textbf{O2'}) were set to
+give the observed mutation rate (2 × 10\textsuperscript{-10} mutations
+per base pair per generation,
+(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#ref-20}{\textbf{20}}))
+at a final population density of 3 × 10\textsuperscript{8} CFU
+ml\textsuperscript{-1}, typical of 250 mg L\textsuperscript{-1} glucose
+in minimal media. As with most experiments demonstrating
+density-associated mutation rate plasticity
+(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#ref-3}{\textbf{3}},
+\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#ref-21}{\textbf{21}}),
+final population density is controlled by varying initial external
+glucose. We initiated 28h simulations of 1ml cultures with 2175 cells (a
+small number, typical of fluctuation assays estimating mutation rate,
+\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F14}{\textbf{Fig.
+S10}}), no internal metabolites and external glucose concentrations
+relevant to wet-lab experiments -- across a log scale from 55 to 1100 mg
+L\textsuperscript{-1}
+(\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#T1}{\textbf{Table
+1}}). The dynamics of external glucose, population size and mutation
+rate for these simulations are shown in
+\href{https://www.biorxiv.org/content/10.1101/2023.09.27.557722v1.full\#F1}{\textbf{Fig.1B-D}}.
 
 \bookmarksetup{startatroot}
 
@@ -472,6 +611,12 @@ and Combating the Evolution of Antibiotic Resistance.''} Edited by Matt
 Waldor. \emph{PLoS Biology} 3 (6): e176.
 \url{https://doi.org/10.1371/journal.pbio.0030176}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-Cornick2004}{}}%
+Cornick, N. A., and A. F. Helgerson. 2004. {``Transmission and
+Infectious Dose of {\emph{Escherichia Coli}} O157:H7 in Swine.''}
+\emph{Applied and Environmental Microbiology} 70 (9): 5331--35.
+\url{https://doi.org/10.1128/aem.70.9.5331-5335.2004}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-Domenech2020}{}}%
 Domenech, Arnau, Ana Rita Brochado, Vicky Sender, Karina Hentrich,
 Birgitta Henriques-Normark, Athanasios Typas, and Jan-Willem Veening.
@@ -490,6 +635,11 @@ Eleanor andKrašovec, and Christopher G. Knight. 2023. {``Environmental
 and Genetic Influence on Rate and Spectrum of Spontaneous Mutations in
 Escherichia Coli.''} \emph{biorXiv}, June.
 \url{https://doi.org/10.1101/2023.04.06.535897}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Imlay2003}{}}%
+Imlay, James A. 2003. {``Pathways of Oxidative Damage.''} \emph{Annual
+Review of Microbiology} 57 (1): 395--418.
+\url{https://doi.org/10.1146/annurev.micro.57.030502.090938}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Krasovec2018}{}}%
 Krašovec, Rok, Huw Richards, Danna R. Gifford, Roman V. Belavkin,
@@ -540,6 +690,12 @@ Ragheb, Mark N., Maureen K. Thomason, Chris Hsu, Patrick Nugent, John
 Gage, Ariana N. Samadpour, Ankunda Kariisa, et al. 2019. {``Inhibiting
 the Evolution of Antibiotic Resistance.''} \emph{Molecular Cell} 73 (1):
 157--165.e5. \url{https://doi.org/10.1016/j.molcel.2018.10.015}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-Tenaillon2010}{}}%
+Tenaillon, Olivier, David Skurnik, Bertrand Picard, and Erick Denamur.
+2010. {``The Population Genetics of Commensal Escherichia Coli.''}
+\emph{Nature Reviews Microbiology} 8 (3): 207--17.
+\url{https://doi.org/10.1038/nrmicro2298}.
 
 \end{CSLReferences}
 
