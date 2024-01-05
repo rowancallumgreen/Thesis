@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "How ecological interactions shape microbial mutation rates to antimicrobial resistance",
     "section": "",
-    "text": "Thesis as HTML"
+    "text": "Thesis also available as pdf"
   },
   {
     "objectID": "Introduction.html",
@@ -54,5 +54,19 @@
     "title": "Abstract",
     "section": "",
     "text": "Mutagenesis is responsive to many environmental factors. Evolution therefore depends on the environment not only for selection but also in determining the variation available in a population. One such environmental dependency is the inverse relationship between mutation rates and population density in many microbial species. Here we determine the mechanism responsible for this mutation rate plasticity. Using dynamical computational modelling and in vivo mutation rate estimation we show that the negative relationship between mutation rate and population density arises from the collective ability of microbial populations to control concentrations of hydrogen peroxide. We demonstrate a loss of this density-associated mutation rate plasticity when Escherichia coli populations are deficient in the degradation of hydrogen peroxide. We further show that the reduction in mutation rate in denser populations is restored in peroxide degradation-deficient cells by the presence of wild-type cells in a mixed population. Together, these model-guided experiments provide a mechanistic explanation for density-associated mutation rate plasticity, applicable across all domains of life, and frames mutation rate as a dynamic trait shaped by microbial community composition."
+  },
+  {
+    "objectID": "Copyright.html",
+    "href": "Copyright.html",
+    "title": "Copyright",
+    "section": "",
+    "text": "The author of this thesis (including any appendices and/or schedules to this thesis) owns certain copyright or related rights in it (the “Copyright”) and they have given the University of Manchester certain rights to use such Copyright, including for administrative purposes.\nCopies of this thesis, either in full or in extracts and whether in hard or electronic copy, may be made only in accordance with the Copyright, Designs and Patents Act 1988 (as amended) and regulations issued under it or, where appropriate, in accordance with licensing agreements which the University has from time to time. This page must form part of any such copies made.\nThe ownership of certain Copyright, patents, designs, trademarks and other intellectual property (the “Intellectual Property”) and any reproductions of copyright works in the thesis, for example graphs and tables (“Reproductions”), which may be described in this thesis, may not be owned by the author and may be owned by third parties. Such Intellectual Property and Reproductions cannot and must not be made available for use without the prior written permission of the owner(s) of the relevant Intellectual Property and/or Reproductions.\nFurther information on the conditions under which disclosure, publication and commercialisation of this thesis, the Copyright and any Intellectual Property and/or Reproductions described in it may take place is available in the University IP Policy, in any relevant Thesis restriction declarations deposited in the University Library, the University Library’s regulations and in the University’s policy on the Presentation of Theses."
+  },
+  {
+    "objectID": "Declaration.html",
+    "href": "Declaration.html",
+    "title": "Declaration",
+    "section": "",
+    "text": "Data collected by HW and CB and submitted for MSc Medical Microbiology is included in chapter 1 and detailed in appendix 1. No other portion of the work referred to in the thesis has been submitted in support of an application foranother degree or qualification of this or any other university or other institute of learning."
   }
 ]

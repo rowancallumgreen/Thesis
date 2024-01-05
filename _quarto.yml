@@ -16,6 +16,7 @@ book:
     - Abbreviations.qmd
     - Abstract.qmd
     - Declaration.qmd
+    - Copyright.qmd
     - Introduction.qmd
     - Results.qmd
     - Discussion.qmd
