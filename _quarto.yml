@@ -1,0 +1,47 @@
+project:
+  type: book
+
+book:
+  title: 'How ecological interactions shape microbial mutation rates'
+  author: 'Rowan Green'
+  subtitle: 'A thesis submitted to the University of Manchester for the degree of Doctor of Philosophy in the Faculty of Science and Engineering. '
+  date: today
+  date-format: "YYYY"
+
+  # If you have more two advisors, un-silence line 7
+  #altadvisor: 'Your Other Advisor'
+  chapters:
+    - index.qmd
+    - Introduction.qmd
+    - Results.qmd
+    - Discussion.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    toc: true
+    toc-depth: 3
+    toc-title: "Table of contents"
+    lof: true
+    lot: true
+    keep-tex: true
+    documentclass: scrreprt
+    mainfont: "Times New Roman"
+    sansfont: "Arial"
+    monofont: "Courier New"
+    include-in-header:
+      text: |
+          \usepackage{lipsum}
+          \usepackage{setspace}
+          \onehalfspacing
+          \linespread{1.5}
+
+fontsize: 12pt
+    
+editor: visual
+
